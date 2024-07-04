@@ -32,7 +32,7 @@ const menuGroups = [
           {label: "Recebidos",route: "/aplication/received"},
           { label: "Aprovados", route: "/aplication/aprovados" },
           { label: "Reprovados", route: "/aplication/reprovados" },
-          { label: "Settings Users", route: "/aplication/editUser" },
+          { label: "Adicionar Usuário", route: "/aplication/editUser" },
           { label: "Emitir Atestado", route: "/aplication/emission" },
           { label: "Autorizar Acessos", route: "/aplication/permissionUsers" },
         ], 
@@ -43,7 +43,6 @@ const menuGroups = [
 ];
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-  const pathname = usePathname();
 
   const [pageName, setPageName] = useLocalStorage("selectedMenu", "dashboard");
 

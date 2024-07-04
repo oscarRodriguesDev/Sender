@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import DefaultLayout from "@/components/dashComponents/Layouts/DefaultLaout";
 
 export const metadata: Metadata = {
-  title: "Approved users",
+  title: "Usuários Reprovados",
   description: "Lista de usuários com atestados aprovados",
 };
 

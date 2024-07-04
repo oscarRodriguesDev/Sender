@@ -5,7 +5,7 @@ export default function SettingsUser() {
 
     return (
         <DefaultLayout>
-            <Breadcrumb pageName="Settings User" />
+            <Breadcrumb pageName="Novos Usuários" />
             <SettingsUsers />
         </DefaultLayout>
     )
