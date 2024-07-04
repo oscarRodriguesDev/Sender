@@ -20,7 +20,9 @@ const DropdownNotification = () => {
 
   // Função assíncrona que busca as notificações ativas na API
   const getNotifications = async (): Promise<Notification[]> => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}api/atestados`);
+    const baseUrl = window.location.origin;
+    const apiUrl = `${baseUrl}/api/atestados`;
+    const response = await fetch(`${apiUrl}`);
     if (!response.ok) {
       throw new Error(`Não foi possível recuperar dados`);
     }
