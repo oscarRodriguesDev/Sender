@@ -1,5 +1,5 @@
-// Arquivo DashboardSesmt.js
-'use client';
+
+'use client'
 
 import DefaultLayout from '@/components/dashComponents/Layouts/DefaultLaout';
 import Breadcrumb from '@/components/dashComponents/Breadcrumbs/Breadcrumb';

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { readAllData, CreateUser, deleteUsuario } from '@/app/(auth)/auth/authEmail';
-import { initAdmin,deleteUID } from '@/app/(auth)/auth/admin/firebaseAdmin';
+import { initAdmin } from '@/app/(auth)/auth/admin/firebaseAdmin';
 import admin from 'firebase-admin';
 
 let adminApp: admin.app.App;

@@ -1,3 +1,4 @@
+'use client'
 import { useEffect } from "react";
 import useLocalStorage from "./useLocalStorage";
 
@@ -16,4 +17,4 @@ const useColorMode = () => {
   return [colorMode, setColorMode];
 };
 
-export default useColorMode;
+export default useColorMode; 
