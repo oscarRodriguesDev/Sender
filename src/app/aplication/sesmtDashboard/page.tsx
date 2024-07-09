@@ -3,11 +3,17 @@
 
 import DefaultLayout from '@/components/dashComponents/Layouts/DefaultLaout';
 import Breadcrumb from '@/components/dashComponents/Breadcrumbs/Breadcrumb';
-import CIDs from '@/components/dashComponents/charts/BarGrafic';
-import Donuts from '@/components/dashComponents/charts/circleGrafic';
-import MultiAxisChart from '@/components/dashComponents/charts/multieX';
-import PieChart from '@/components/dashComponents/charts/pieGraph';
-import TimeChart from '@/components/dashComponents/charts/timeChart';
+
+import dynamic from 'next/dynamic';
+
+const CIDs = dynamic(() => import('@/components/dashComponents/charts/BarGrafic'), { ssr: false });
+const Donuts = dynamic(() => import('@/components/dashComponents/charts/circleGrafic'), { ssr: false });
+const MultiAxisChart = dynamic(() => import('@/components/dashComponents/charts/multieX'), { ssr: false });
+const PieChart = dynamic(() => import('@/components/dashComponents/charts/pieGraph'), { ssr: false });
+const TimeChart = dynamic(() => import('@/components/dashComponents/charts/timeChart'), { ssr: false });
+
+
+
 
 export default function DashboardSesmt() {
   return (
