@@ -42,7 +42,7 @@
     "src/app/js/*",
     "src/utils/costumer.type.xx/*",
     "src/app/api/delete/api.js"
-  ],
+, "src/components/dashComponents/charts"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from "react";
 interface Props {
   children: React.ReactNode;
@@ -5,6 +6,7 @@ interface Props {
   onClick: () => void;
   className?: string;
 }
+
 const ClickOutside: React.FC<Props> = ({
   children,
   exceptionRef,
@@ -12,6 +14,7 @@ const ClickOutside: React.FC<Props> = ({
   className,
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleClickListener = (event: MouseEvent) => {
       let clickedInside: null | boolean = false;
@@ -27,9 +30,12 @@ const ClickOutside: React.FC<Props> = ({
           wrapperRef.current &&
           wrapperRef.current.contains(event.target as Node);
       }
+
       if (!clickedInside) onClick();
     };
+
     document.addEventListener("mousedown", handleClickListener);
+
     return () => {
       document.removeEventListener("mousedown", handleClickListener);
     };
@@ -41,4 +47,5 @@ const ClickOutside: React.FC<Props> = ({
     </div>
   );
 };
+
 export default ClickOutside;

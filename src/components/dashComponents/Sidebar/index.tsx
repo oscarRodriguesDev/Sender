@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import SidebarItem from "./SidebarItem";
 import ClickOutside from "../ClickOutside";
 import useLocalStorage from "@/app/hooks/useLocalStorage";
 import { FaFileMedicalAlt } from "react-icons/fa";
+import { HiOutlineDocumentReport } from "react-icons/hi";
+
 
 
 
@@ -25,7 +26,7 @@ const menuGroups = [
         icon: (
         <FaFileMedicalAlt size={24}/>
         ),
-        label: "Atestados",
+        label: "SESMT-ADMIN",
         route: "#",
         children: [
           {label: "Usuarios Ativos",route: "/aplication/all"},
@@ -35,6 +36,17 @@ const menuGroups = [
           { label: "Adicionar Usuário", route: "/aplication/editUser" },
           { label: "Emitir Atestado", route: "/aplication/emission" },
           { label: "Autorizar Acessos", route: "/aplication/permissionUsers" },
+        ], 
+      },
+      {
+        icon: (
+        <HiOutlineDocumentReport size={24}/>
+        ),
+        label: "DashBoards",
+        route: "#",
+        children: [
+          {label: "SESMT",route: "/aplication/sesmtDashboard"},
+       
         ], 
       },
     ],
