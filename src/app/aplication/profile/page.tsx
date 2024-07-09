@@ -19,5 +19,5 @@ const Profile = () => {
     </DefaultLayout>
   );
 };
-
+ export default Profile;
 
