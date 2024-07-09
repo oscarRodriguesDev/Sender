@@ -70,9 +70,9 @@ export default function Home() {
 
           <div className="hidden items-center gap-x-10 xl:gap-x-24 md:flex">
             <div className="flex items-center md:gap-x-3 lg:gap-x-8 xl:gap-x-12">
-              <div className={cn("lg:text-[16px] md:text-sm")}>About</div>
-              <div className={cn("lg:text-[16px] md:text-sm")}>Services</div>
-              <div className={cn("lg:text-[16px] md:text-sm")}>Prices</div>
+              <div className={cn("lg:text-[16px] md:text-sm")}> <Link href='#about'>About</Link></div>
+              <div className={cn("lg:text-[16px] md:text-sm")}> <Link href='#services'>Services</Link></div>
+              <div className={cn("lg:text-[16px] md:text-sm")}> <Link href='#prices'>Prices</Link></div>
               <Link href="/">
                 <div
                   className={cn(
@@ -102,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Section 2 Hero*/}
-      <section className="mx-[300px] bg-white py-12">
+      <section  className="mx-[300px] bg-white py-12">
         <div className="flex-col">
           <div className="flex text-[12px] md:text-[18px] justify-center md:text-end md:justify-end mt-[20px] md:mr-[25px] lg:mr-[60px] lg:text-[24px] font-bold">
             <i className="z-40">
@@ -182,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* section 3  introduction*/}
-      <section className="mx-[300px] bg-white py-12">
+      <section id='about' className="mx-[300px] bg-white py-12">
         <div className="flex flex-col md:flex-row mx-4 lg:mx-8 xl:mx-16 2xl:mx-32 my-4 md:my-8 gap-x-8 md:gap-x-16">
           <div className="flex my-auto z-50">
             <h2 className="text-6xl font-bold text-purple-700">Sender</h2>
@@ -207,7 +207,7 @@ export default function Home() {
       </section>
 
       {/* section 4 services and funcionalities*/}
-      <section className="mx-[300px] bg-white py-12">
+      <section id='services' className="mx-[300px] bg-white py-12">
         <div className="flex flex-col md:flex-row-reverse mx-4 lg:mx-8 xl:mx-16 2xl:mx-32 my-4 md:my-8 gap-x-8 md:gap-x-16">
           <div className="flex my-auto z-50">
             <Image
@@ -331,7 +331,7 @@ export default function Home() {
       </section>
 
       {/* section 6 plans and prices*/}
-      <section className="bg-white py-12">
+      <section id='prices' className="bg-white py-12">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4 text-purple-800">
             Planos e Preços
@@ -465,19 +465,19 @@ export default function Home() {
                   </Link>
                 </h2>
                 <p className="text-gray-300">
-                  Getlinked Tech Hackathon is a technology innovative program
-                  established by a group of organizations with the aim of
-                  showcasing young and talented individuals in the field of
-                  technology.
+                O Sender transforma a comunicação dentro da sua empresa, otimizando processos e 
+                conectando colaboradores de maneira rápida e eficiente. Com o Sender, cada interação é
+                 mais clara, ágil e eficaz. Descubra como nosso produto pode levar sua organização a novos 
+                 patamares de excelência.
                 </p>
               </div>
               <div className="mt-6">
                 <div className="flex space-x-4">
                   <div className="cursor-pointer text-gray-300 hover:text-pink-500 transition">
-                    <span>Term of Use</span>
+                    <span>Termos de uso</span>
                   </div>
                   <div className="cursor-pointer text-gray-300 hover:text-pink-500 transition">
-                    <span>Privacy Policy</span>
+                    <span>Politicas de Privacidade</span>
                   </div>
                 </div>
               </div>
@@ -487,24 +487,24 @@ export default function Home() {
             <div className="col-span-1">
               <div className="text-white">
                 <h3 className="text-lg font-semibold text-pink-500 mb-2">
-                  Useful Links
+                  Links úteis
                 </h3>
                 <div className="flex flex-col space-y-2">
                   <div className="cursor-pointer text-gray-300 hover:text-pink-500 transition">
-                    <span>Overview</span>
+                    <span>About Us</span>
                   </div>
                   <div className="cursor-pointer text-gray-300 hover:text-pink-500 transition">
-                    <span>Timeline</span>
+                    <span>Services</span>
                   </div>
                   <div className="cursor-pointer text-gray-300 hover:text-pink-500 transition">
-                    <span>FAQs</span>
+                    <span>Prices</span>
                   </div>
                   <div className="cursor-pointer text-gray-300 hover:text-pink-500 transition">
-                    <span>Register</span>
+                    <span>Contato</span>
                   </div>
                 </div>
                 <div className="flex items-center mt-4 space-x-4">
-                  <span className="text-pink-500 text-sm">Follow us:</span>
+                  <span className="text-pink-500 text-sm">Siga-nos:</span>
                   <div className="flex space-x-2">
                     <div className="cursor-pointer text-gray-300 hover:text-pink-500 transition">
                       <Instagram className="h-6 w-6" />
@@ -527,16 +527,16 @@ export default function Home() {
             <div className="col-span-1">
               <div className="text-white">
                 <h3 className="text-lg font-semibold text-pink-500 mb-2">
-                  Contact Us
+                  Falar com um atendente
                 </h3>
                 <div className="flex items-center space-x-4">
                   <PhoneCall className="h-6 w-6" />
-                  <span className="text-gray-300">+234 6707653444</span>
+                  <span className="text-gray-300">+5527988991663</span>
                 </div>
                 <div className="flex items-center mt-4 space-x-4">
                   <MapPin className="h-6 w-6" />
                   <span className="text-gray-300">
-                    27, Alara street Yaba 100012 Lagos State
+                Civit II n° 27 Serra ES
                   </span>
                 </div>
               </div>
@@ -545,7 +545,7 @@ export default function Home() {
 
           {/* Direitos Reservados */}
           <div className="flex justify-center items-center mt-8 text-white text-sm md:text-base lg:text-lg">
-            All rights reserved. &copy; getlinked Ltd.
+            Todos os direitos reservados. &copy; sender.com.br
           </div>
         </div>
       </section>
