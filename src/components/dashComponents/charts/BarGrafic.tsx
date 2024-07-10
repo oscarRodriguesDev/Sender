@@ -16,10 +16,10 @@ export default function CIDs() {
         },
         series: [{
           name: 'sales',
-          data: [30, 40, 35, 50, 25, 15] // cids por mês
+          data: [30, 40, 35, 50, 25,15] // cids por mês
         }],
         xaxis: {
-          categories: ['JAN', 'FEV', 'MAR', 'ABR', 'JUN'] // meses vai vir do banco quando virar o ano resolver se apaga ou armazena o valor para anual
+          categories: ['JAN', 'FEV', 'MAR', 'ABR', 'MAI','JUN'] // meses vai vir do banco quando virar o ano resolver se apaga ou armazena o valor para anual
         },
       };
 

@@ -10,6 +10,7 @@ const Donuts = dynamic(() => import('@/components/dashComponents/charts/circleGr
 const MultiAxisChart = dynamic(() => import('@/components/dashComponents/charts/multieX'), { ssr: false });
 const PieChart = dynamic(() => import('@/components/dashComponents/charts/pieGraph'), { ssr: false });
 const TimeChart = dynamic(() => import('@/components/dashComponents/charts/timeChart'), { ssr: false });
+const Card = dynamic(() => import('@/components/dashComponents/charts/cardChart'),{ssr:false})
 
 
 export default function DashboardSesmt() {
@@ -32,6 +33,15 @@ export default function DashboardSesmt() {
         <div className="bg-white shadow-lg rounded-lg p-4 dark:bg-gray-900">
           <TimeChart />
         </div>
+
+        <div className="grid grid-cols-2 gap-4">
+        <Card titulo="Total de Atestados" value="120" />
+        <Card titulo="Aprovados" value="115" />
+        <Card titulo="Reprovados" value="3" />
+        <Card titulo="Pendentes" value="2" />
+
+        </div>
+
       </div>
     </DefaultLayout>
   );
