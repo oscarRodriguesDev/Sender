@@ -42,10 +42,10 @@ const menuGroups = [
         icon: (
         <HiOutlineDocumentReport size={24}/>
         ),
-        label: "DashBoards",
+        label: "DASHBOARDS",
         route: "#",
         children: [
-          {label: "SESMT",route: "/aplication/sesmtDashboard"},
+          {label: "Sesmt",route: "/aplication/sesmtDashboard"},
        
         ], 
       },

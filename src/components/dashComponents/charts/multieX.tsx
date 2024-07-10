@@ -1,53 +1,46 @@
-'use client'
 import React, { useEffect, useRef } from 'react';
 import ApexCharts from 'apexcharts';
 
-export default function MultiAxisChart() {
-  const chartRef = useRef(null);
+export default function CustomChart() {
+  const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const options = {
-      chart: {
-        height: '400px',
-        type: 'line',
-      },
-      series: [
-        {
-          name: 'ANO 1',
-          type: 'line',
-          data: [30, 40, 45, 50, 49, 60, 70, 91, 125],
-        },
-        {
-          name: 'ANO 2',
-          type: 'line',
-          data: [60, 50, 55, 40, 39, 50, 60, 81, 105],
-          yAxisIndex: 1, // Associando à segundo eixo Y
-        },
-      ],
-      options: {
+    if (typeof window !== 'undefined') {
+      const options: ApexCharts.ApexOptions = {
         chart: {
-          zoom: {
-            enabled: false,
-          },
+          height: 350,
+          type: 'line',
+          stacked: false,
         },
-        colors: ['#008FFB', '#FF5733'],
         dataLabels: {
           enabled: false,
         },
+        colors: ['#FF1654', '#247BA0'],
+        series: [
+          {
+            name: 'Ano 1',
+            data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6],
+          },
+          {
+            name: 'Ano 2',
+            data: [20, 29, 37, 36, 44, 45, 50, 58],
+          },
+        ],
         stroke: {
-          width: [5, 7],
-          curve: 'straight',
-          dashArray: [0, 5],
+          width: [4, 4],
         },
-        title: {
-          text: 'Gráfico Multieixo',
-          align: 'left',
-        },
-        markers: {
-          size: 0,
+        plotOptions: {
+          bar: {
+            columnWidth: '20%',
+          },
         },
         xaxis: {
-          categories: ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV'],
+          categories: ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','SET','OUT','NOV','DEZ'],
+          labels: {
+            style: {
+              colors: '#000', // Cor dos labels do eixo X
+            },
+          },
         },
         yaxis: [
           {
@@ -56,71 +49,80 @@ export default function MultiAxisChart() {
             },
             axisBorder: {
               show: true,
-              color: '#008FFB',
+              color: '#FF1654',
             },
             labels: {
               style: {
-                colors: '#008FFB',
+                colors: '#FF1654', // Cor dos labels do eixo Y para Series A
               },
             },
             title: {
-              text: 'Series 1',
+              text: 'Series A',
               style: {
-                color: '#008FFB',
+                color: '#FF1654', // Cor do título do eixo Y para Series A
               },
             },
           },
           {
-            seriesName: 'Series 2',
             opposite: true,
             axisTicks: {
               show: true,
             },
             axisBorder: {
               show: true,
-              color: '#FF5733',
+              color: '#247BA0',
             },
             labels: {
               style: {
-                colors: '#FF5733',
+                colors: '#247BA0', // Cor dos labels do eixo Y para Series B
               },
             },
             title: {
-              text: 'Series 2',
+              text: 'Series B',
               style: {
-                color: '#FF5733',
+                color: '#247BA0', // Cor do título do eixo Y para Series B
               },
             },
           },
         ],
         tooltip: {
-          shared: true,
-          intersect: false,
-          y: {
-            formatter: function (y:any) {
-              if (typeof y !== 'undefined') {
-                return y.toFixed(0) + ' points';
-              }
-              return y;
-            },
+          shared: false,
+          intersect: true,
+          x: {
+            show: false,
+          },
+          style: {
+            fontSize: '12px',
+            fontFamily: undefined,
+           
           },
         },
-      },
-    };
+        legend: {
+          horizontalAlign: 'left',
+          offsetX: 40,
+        },
+        
+      };
 
-    const chart = new ApexCharts(chartRef.current, options);
-    chart.render();
+      const chart = new ApexCharts(chartRef.current, options);
+      chart.render();
 
-    // Cleanup on unmount
-    return () => {
-      chart.destroy();
-    };
+      // Cleanup on unmount
+      return () => {
+        chart.destroy();
+      };
+    }
   }, []);
 
   return (
-    <div className="chart-container">
-      <div className='text-black dark:text-white'>Comparativo anual</div>
-      <div id="chart" ref={chartRef}></div>
-    </div>
-  );
+     <>
+     <div>Comparativo anual</div>
+     <div id="chart" ref={chartRef} className="chart-container">
+ 
+ 
+     </div>
+     
+     </>
+   
+  )
 }
