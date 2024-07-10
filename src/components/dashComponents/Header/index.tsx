@@ -60,7 +60,7 @@ const Header = (props: {
               <Image
                 width={40}
                 height={40}
-                src={"/images/logo/logo.svg"}
+                src={"/images/logo/logo2.svg"}
                 alt="Logo"
               />
             </Link>
@@ -75,7 +75,7 @@ const Header = (props: {
                 src={"/images/logo/logo2.svg"}
                 alt="Logo"
               />
-              <p className="font-medium">Sender Admin</p>
+              <p className="font-medium text-black dark:text-white">Sender Admin</p>
             </div>
           </div>
         </div>

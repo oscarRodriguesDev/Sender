@@ -13,7 +13,7 @@ export default function DefaultLayout({
   return (
     <>
       {/* ===== Page Wrapper Start ===== */}
-      <div className="flex h-screen overflow-hidden relative">
+      <div className="flex h-screen overflow-hidden relative bg-gray-800 dark:bg-black">
         {/* ===== Sidebar Start ===== */}
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         {/* ===== Sidebar End ===== */}

@@ -86,7 +86,7 @@ const DropdownNotification = () => {
   return (
     <ClickOutside
       onClick={() => setDropdownOpen(false)}
-      className="relative hidden sm:block"
+      className="relative hidden  text-black dark:text-white sm:block"
     >
       <Toaster position="bottom-right" /> {/* Componente Toaster para exibir toasts de feedback */}
 
@@ -96,13 +96,13 @@ const DropdownNotification = () => {
             setDropdownOpen(!dropdownOpen); // Alterna o estado para abrir ou fechar o dropdown
           }}
           href="#"
-          className="relative flex h-12 w-12 items-center justify-center rounded-full border border-stroke bg-gray-2 text-dark hover:text-primary dark:border-dark-4 dark:bg-dark-3 dark:text-white dark:hover:text-white"
+          className="relative flex h-12 w-12 items-center justify-center rounded-full border border-stroke text-black bg-gray-2 hover:text-primary  dark:border-dark-4 dark:bg-dark-3 dark:text-white dark:hover:text-white"
         >
           <span className="relative">
             <LiaEnvelopeSolid size={24} /> {/* Ícone de envelope para notificações */}
 
             {notifying && ( // Renderização condicional do ícone de notificação com animação de ping
-              <span className="absolute -top-0.5 right-0 z-1 h-2.5 w-2.5 rounded-full border-2 border-gray-2 bg-red-light dark:border-dark-3">
+              <span className="absolute -top-0.5 right-0 z-1 h-2.5 w-2.5 rounded-full border-2 border-gray-2 bg-red-light text-black dark:border-dark-3">
                 <span className="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-red-100 opacity-75"></span>
               </span>
             )}
