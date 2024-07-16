@@ -19,13 +19,16 @@ const TimeChart: React.FC = () => {
       { abertura: '2024-07-10T14:45:00', conclusao: '2024-07-10T15:10:00' },
     ];
 
-    // Converter dados para o formato adequado para ApexCharts
-    const seriesData: number[] = chamados.map(chamado => {
-      const abertura = new Date(chamado.abertura).getTime();
-      const conclusao = new Date(chamado.conclusao).getTime();
-      const tempoDecorrido = (conclusao - abertura) / (1000 * 60 * 60); // Converter para horas
-      return tempoDecorrido;
-    });
+
+
+// Converter dados para o formato adequado para ApexCharts
+const seriesData: number[] = chamados.map(chamado => {
+  const abertura = new Date(chamado.abertura).getTime();
+  const conclusao = new Date(chamado.conclusao).getTime();
+  const tempoDecorrido = (conclusao - abertura) / (1000 * 60 * 60); // Converter para horas
+  
+  return parseFloat(tempoDecorrido.toFixed(2)); // Arredondar para 2 casas decimais
+});
 
     // Labels (opcional, pode ser usado para mostrar a data/hora de abertura)
     const labels: string[] = chamados.map(chamado => {
@@ -70,10 +73,11 @@ const TimeChart: React.FC = () => {
       colors: ['#FF4560'], // Cor vermelha
       tooltip: {
         theme: 'dark', // Usar tema escuro para tooltips
+        
         style: {
-          fontSize: '12px',
+          fontSize:'12px',
           fontFamily: undefined,
-          colors: ['#000'] // Cor do texto da tooltip
+        // Cor do texto da tooltip
         },
         x: {
           formatter: function(val: any) {
