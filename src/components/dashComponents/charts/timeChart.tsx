@@ -72,7 +72,7 @@ const seriesData: number[] = chamados.map(chamado => {
       },
       colors: ['#FF4560'], // Cor vermelha
       tooltip: {
-        theme: 'dark', // Usar tema escuro para tooltips
+        theme: 'dark', // Usar tema escuro para tooltips é legal
         
         style: {
           fontSize:'12px',
